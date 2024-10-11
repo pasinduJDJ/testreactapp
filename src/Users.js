@@ -1,4 +1,6 @@
+import { Box } from "@mui/material";
 import UserForm from "./UserForm";
+import UserTable from "./UserTable";
 
 const users = [
     {
@@ -9,10 +11,15 @@ const users = [
         id: 2,
         name: "Pasindu",
     },
-]
+];
 const Users = () => {
     return(
-        <UserForm/>
+        <Box
+            sx={{width:'calc(100%-100px)',margin:'auto'}}
+            >
+            <UserForm/>
+            <UserTable rows={users}/>
+        </Box>
     );
 
 }

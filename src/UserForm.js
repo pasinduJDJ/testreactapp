@@ -1,14 +1,19 @@
 import { Grid2, Input, Typography, Button } from "@mui/material";
+import { useState } from "react";
 
 const UserForm = (props) => {
+
+    const [id, setId] = useState(0);
+    const [name, setName]=useState('');
+
     return (
-        <Grid2 container spacing={2} sx={{marginLeft:'30px', marginTop:'30px'}}>
+        <Grid2 container spacing={2} sx={{ marginLeft: '30px', marginTop: '30px' }}>
             <Grid2 size={{ xs: 12, md: 12 }}>
                 <Typography component={"h1"} sx={{ color: "#000000" }}>
                     User Form
                 </Typography>
             </Grid2>
-            <Grid2 size={{ xs: 12, md: 12 }} sx={{display:'flex'}}>
+            <Grid2 size={{ xs: 12, md: 12 }} sx={{ display: 'flex' }}>
                 <Typography
                     component={"label"}
                     htmlFor="id"
@@ -17,7 +22,7 @@ const UserForm = (props) => {
                         marginRight: "20px",
                         fontSize: "16px",
                         display: "block",
-                        width:'100px'
+                        width: '100px'
                     }}
                 >
                     ID
@@ -29,11 +34,11 @@ const UserForm = (props) => {
                     sx={{
                         width: "500px",
                     }}
-                    value={""}
-                    onChange={(e) => { }}
+                    value={id}
+                    onChange={e => setId(e.target.value)}
                 />
             </Grid2>
-            <Grid2 size={{ xs: 12, md: 12 }} sx={{display:'flex'}}>
+            <Grid2 size={{ xs: 12, md: 12 }} sx={{ display: 'flex' }}>
                 <Typography
                     component={"label"}
                     htmlFor="id"
@@ -42,7 +47,7 @@ const UserForm = (props) => {
                         marginRight: "20px",
                         fontSize: "16px",
                         display: "block",
-                        width:'100px'
+                        width: '100px'
                     }}
                 >
                     Name
@@ -54,23 +59,23 @@ const UserForm = (props) => {
                     sx={{
                         width: "500px",
                     }}
-                    value={""}
-                    onChange={(e) => { }}
+                    value={name}
+                    onChange={e =>setName(e.target.value)}
                 />
             </Grid2>
             <Button sx={{
-                margin:'auto',
-                marginBottom:'20px',
-                backgroundColor:'#00c6e6',
-                color:'#000000', 
-                marginLeft:'15px',
-                marginTop:'20px',
-                '&:hover':{
+                margin: 'auto',
+                marginBottom: '20px',
+                backgroundColor: '#00c6e6',
+                color: '#000000',
+                marginLeft: '15px',
+                marginTop: '20px',
+                '&:hover': {
                     opacity: '0.7',
-                    backgroundColor:'#00c6e6',
+                    backgroundColor: '#00c6e6',
                 }
             }}>
-                Add 
+                Add
             </Button>
         </Grid2>
     );
